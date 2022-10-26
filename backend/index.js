@@ -4,10 +4,12 @@ const process = require('process');
 const { authenticate } = require('@google-cloud/local-auth');
 const { google } = require('googleapis');
 const express = require('express')
+const cors = require('cors');
 
 const app = express()
-const port = 3000
+const port = 8080
 
+app.use(cors())
 app.use(express.static('public'))
 
 // If modifying these scopes, delete token.json.
